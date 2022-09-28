@@ -4,8 +4,13 @@
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
-        
-
+        {
+            "type": "java",
+            "name": "Launch Utility",
+            "request": "launch",
+            "mainClass": "gr11review.part2.Utility",
+            "projectName": "grade-11-review-2---methods-and-testing-james-brighton-hayden-1_f910c520"
+        },
         {
             "type": "java",
             "name": "Debug (Launch) - Current File",

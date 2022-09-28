@@ -1,6 +1,9 @@
 package gr11review.part2;
 
 import static org.junit.jupiter.api.Assertions.*;
+
+import java.io.IOException;
+
 import org.junit.jupiter.api.Test;
 
 //import gr11review.part2.Utility;
@@ -48,4 +51,9 @@ public class UtilityTest{
     void xyBalanceTest9(){
         assertEquals(false, Utility.xyBalance("abxde"));
     }
+    @Test
+    void vowelCountTest1() throws IOException{
+        assertEquals("interactive",Utility.vowelCount("C:\\Users\\buyat\\grade-11-review-2---methods-and-testing-james-brighton-hayden-1\\src\\gr11review\\test2\\Review2_3Test_1.txt"));
+    }
+
 }

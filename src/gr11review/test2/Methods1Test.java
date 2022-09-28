@@ -7,12 +7,8 @@ import gr11review.part2.Utility;
 
 
 public class Methods1Test {
-    @Test
-    void testXyBalance(){
-        assertEquals(true, Utility.xyBalance("abxyc"));
-    }
 
-/* 
+
     @Test
     void testSignature(){
         assertEquals("", Utility.zipZap(""));
@@ -41,5 +37,4 @@ public class Methods1Test {
     void test5(){
         assertEquals("xxzpxx", Utility.zipZap("xxzipxx"));
     }
-*/
 }
