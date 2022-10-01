@@ -1,7 +1,6 @@
 package gr11review.part2;
 
 import java.io.*;
-import java.util.*;
 
 public class Utility {
 
@@ -88,6 +87,7 @@ public class Utility {
          * If the if statement is met, the int will be turned to 0, and moved to last
          * characters of array
          */
+
         // intial value of the element of output array is 0
         int[] outNums = new int[nums.length];
         int outArrIndex = 0;
@@ -105,9 +105,21 @@ public class Utility {
     public static boolean linearIn(int[] outer, int[] inner) {
         boolean foundAll = false;
         int innerIndex = 0;
+
+        /**
+         * Loop goes through each integer in outer until the first value in inner is
+         * found
+         */
+
         for (int i = 0; i < outer.length; i++) {
+
             if (outer[i] == inner[innerIndex]) {
+                /**
+                 * When the first value of inner is found, innerIndex increases, and the loop
+                 * searches for the next value of inner
+                 */
                 innerIndex++;
+
                 if (innerIndex >= inner.length) {
                     foundAll = true;
                     break;
@@ -118,29 +130,24 @@ public class Utility {
         return foundAll;
     }
 
-    public static int[][] reverse(int[][] arr) {
+    public static int[][] invert(int[][] arr) {
         int rowCount = arr.length;
         int colCount = arr[0].length;
         int reverseArr[][] = new int[rowCount][colCount];
 
+        // Double for Loop going through every row and column
         for (int i = 0; i < rowCount; i++) {
             for (int j = 0; j < colCount; j++) {
-                 reverseArr[rowCount - i - 1][colCount - j - 1] = arr [i][j] ;
+
+                /**
+                 * reverseArr's last position in the 2D array is changed to the value of i and
+                 * j, which start from the first value given respecitvely, and move across and
+                 * down the array
+                 */
+                reverseArr[rowCount - i - 1][colCount - j - 1] = arr[i][j];
             }
         }
 
-        return arr;
-    }
-
-    public static void main(String[] args) {
-        int[][] numbers = {
-                { 1, 2, 3 },
-                { 4, 5, 6 },
-                { 7, 8, 9 },
-        };
-
-        int[][] outNums = Utility.reverse(numbers);
-        System.out.println(outNums);
-
+        return reverseArr;
     }
 }
