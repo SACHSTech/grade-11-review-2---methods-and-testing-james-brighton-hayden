@@ -4,6 +4,14 @@ import java.io.*;
 
 public class Utility {
 
+    /**
+     * Given a string, determine if each x instance is "balanced" by a y
+     * 
+     * @param str String given to determine if "xy balanced"
+     * @return true if the string meets the balanced criteria, or false if string is
+     *         not "xy blanaced"
+     * @author J. Bian
+     */
     public static boolean xyBalance(String str) {
 
         int xFound = 0;
@@ -54,6 +62,14 @@ public class Utility {
         return vowelCount;
     }
 
+    /**
+     * Given a text file with multiple lines, determine the string with the largest
+     * number of vowels
+     * 
+     * @param line text file location or path
+     * @return the string in text file with most vowels
+     * @author J. Bian
+     */
     public static String vowelCount(String filenametxt) throws IOException {
         String mostVowelWord = "";
         int maxVowel = 0;
@@ -80,15 +96,22 @@ public class Utility {
         return mostVowelWord;
     }
 
+    /**
+     * Given an array, return a version of array with all occurences of 10 converted
+     * into 0, and moved to the end of array
+     * 
+     * @param nums provided array
+     * @return altered version of array with replaced values
+     * @author J. Bian
+     */
     public static int[] withoutTen(int[] nums) {
 
         /*
          * Checks for numbers = 10 throughout array
          * If the if statement is met, the int will be turned to 0, and moved to last
          * characters of array
+         * Intial value of the element of output array is 0
          */
-
-        // intial value of the element of output array is 0
         int[] outNums = new int[nums.length];
         int outArrIndex = 0;
         for (int i = 0; i < nums.length; i++) {
@@ -102,15 +125,20 @@ public class Utility {
         return outNums;
     }
 
+    /**
+     * Given two arrays, check if all values of outer[] occur in inner[]
+     * 
+     * @param outer specified array
+     * @param inner specified array
+     * @return true if all values are found within inner, false if not all values
+     *         occur
+     * @author J. Bian
+     */
     public static boolean linearIn(int[] outer, int[] inner) {
         boolean foundAll = false;
         int innerIndex = 0;
 
-        /**
-         * Loop goes through each integer in outer until the first value in inner is
-         * found
-         */
-
+        // Loop seearches through each value until an int matches inner[innderIndex]
         for (int i = 0; i < outer.length; i++) {
 
             if (outer[i] == inner[innerIndex]) {
@@ -130,6 +158,14 @@ public class Utility {
         return foundAll;
     }
 
+    
+    /**
+     * Given a 2D array, reverse the order of the positions in the array
+     * 
+     * @param arr specificed 2D array to be given
+     * @return array in inverted order
+     * @author J. Bian
+     */
     public static int[][] invert(int[][] arr) {
         int rowCount = arr.length;
         int colCount = arr[0].length;
