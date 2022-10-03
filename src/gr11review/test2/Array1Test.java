@@ -11,17 +11,17 @@ import java.io.*;
 
 public class Array1Test {
 
-    
+ /* 
     /**
      * Test general access to the file
      */
-    @Test
+@Test
     void testSignature() throws IOException{
         assertTrue((Utility.tenRun(new int[]{})) != null);
     }
 
 
-    @Test
+@Test
     void test1(){
         int[] inArray = {2, 10, 3, 4, 20, 5};
         int[] outArray = {2, 10, 10, 10, 20, 20};
@@ -29,7 +29,7 @@ public class Array1Test {
         assertTrue(Arrays.equals(Utility.tenRun(inArray), outArray) );
     }
 
-    @Test
+@Test
     void test2(){
         int[] inArray = {10, 1, 20, 2};
         int[] outArray = {10, 10, 20, 20};
@@ -37,7 +37,7 @@ public class Array1Test {
         assertTrue(Arrays.equals(Utility.tenRun(inArray), outArray) );
     }
 
-    @Test
+@Test
     void test3(){
         int[] inArray = {10, 1, 9, 20};
         int[] outArray = {10, 10, 10, 20};
