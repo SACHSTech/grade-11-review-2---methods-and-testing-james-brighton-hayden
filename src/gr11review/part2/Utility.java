@@ -3,7 +3,7 @@ package gr11review.part2;
 import java.io.*;
 import java.util.ArrayList;
 
-public class Utility {
+public class Utility { 
 
     /**
      * Given a string, determine the sum of the numbers appearing in the string
