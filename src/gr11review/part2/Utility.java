@@ -1,189 +1,145 @@
 package gr11review.part2;
 
 import java.io.*;
+import java.util.ArrayList;
 
 public class Utility {
 
     /**
-     * Given a string, determine if each x instance is "balanced" by a y
+     * Given a string, determine the sum of the numbers appearing in the string
      * 
-     * @param str String given to determine if "xy balanced"
-     * @return true if the string meets the balanced criteria, or false if string is
-     *         not "xy blanaced"
-     * @author J. Bian
+     * @param str String given to determine the sum
+     * @return intSum (sum of numbers) back to user
+     * @author B. Zhang
      */
-    public static boolean xyBalance(String str) {
+    public static int sumNumbers(String str){
+        String strNum = "";
+        int intSum = 0;
 
-        int xFound = 0;
-        int i = 0;
-
-        // While loop to save repitition between x and y
-        while (i < str.length()) {
-
-            if (str.charAt(i) == 'x') {
-
-                xFound += 1;
-
-                for (int j = i + 1; j < str.length(); j++) {
-                    if (str.charAt(j) == 'y') {
-                        xFound = 0;
-                        i = j + 1;
-                        break;
-                    }
+        // For loop to loop throughout the string
+        for(int i = 0; i < str.length(); i++){
+            if (Character.isDigit(str.charAt(i))) {
+                // Checks for numbers
+                if(i < str.length() - 1 && Character.isDigit(str.charAt(i + 1))) {
+                    strNum += str.charAt(i);
                 }
 
-                // Found x, but did not find y
-                if (xFound > 0) {
-                    break;
-                }
-            }
-            i++;
-        }
-        if (xFound == 0) {
-            return true;
-        } else {
-            return false;
-        }
-
-    }
-
-    public static int vowelInLine(String line) {
-        // Function to count vowels in a word every loop
-
-        String vowels = "aeiou";
-        int vowelCount = 0;
-        for (int i = 0; i < line.length(); i++) {
-
-            if (vowels.indexOf(line.charAt(i)) >= 0) {
-                vowelCount++;
-
-            }
-        }
-        return vowelCount;
-    }
-
-    /**
-     * Given a text file with multiple lines, determine the string with the largest
-     * number of vowels
-     * 
-     * @param line text file location or path
-     * @return the string in text file with most vowels
-     * @author J. Bian
-     */
-    public static String vowelCount(String filenametxt) throws IOException {
-        String mostVowelWord = "";
-        int maxVowel = 0;
-        BufferedReader input = new BufferedReader(new FileReader(filenametxt));
-        String line = input.readLine();
-
-        /*
-         * While there is a character in line, loop will call vowelInLine for each
-         * String
-         * Variables maxVowel and mostVowelWord keep track of the word with most vowels
-         */
-        while (line != null) {
-
-            System.out.println(line);
-            int lineVowelCount = vowelInLine(line);
-            if (lineVowelCount > maxVowel) {
-
-                maxVowel = lineVowelCount;
-                mostVowelWord = line;
-            }
-            line = input.readLine();
-        }
-        input.close();
-        return mostVowelWord;
-    }
-
-    /**
-     * Given an array, return a version of array with all occurences of 10 converted
-     * into 0, and moved to the end of array
-     * 
-     * @param nums provided array
-     * @return altered version of array with replaced values
-     * @author J. Bian
-     */
-    public static int[] withoutTen(int[] nums) {
-
-        /*
-         * Checks for numbers = 10 throughout array
-         * If the if statement is met, the int will be turned to 0, and moved to last
-         * characters of array
-         * Intial value of the element of output array is 0
-         */
-        int[] outNums = new int[nums.length];
-        int outArrIndex = 0;
-        for (int i = 0; i < nums.length; i++) {
-            if (nums[i] != 10) {
-                outNums[outArrIndex] = nums[i];
-                outArrIndex++;
-
-            }
-        }
-
-        return outNums;
-    }
-
-    /**
-     * Given two arrays, check if all values of outer[] occur in inner[]
-     * 
-     * @param outer specified array
-     * @param inner specified array
-     * @return true if all values are found within inner, false if not all values
-     *         occur
-     * @author J. Bian
-     */
-    public static boolean linearIn(int[] outer, int[] inner) {
-        boolean foundAll = false;
-        int innerIndex = 0;
-
-        // Loop seearches through each value until an int matches inner[innderIndex]
-        for (int i = 0; i < outer.length; i++) {
-
-            if (outer[i] == inner[innerIndex]) {
-                /**
-                 * When the first value of inner is found, innerIndex increases, and the loop
-                 * searches for the next value of inner
-                 */
-                innerIndex++;
-
-                if (innerIndex >= inner.length) {
-                    foundAll = true;
-                    break;
+                else{
+                    strNum += str.charAt(i);
+                    intSum += Integer.parseInt(strNum);
+                    strNum = "";
                 }
             }
         }
 
-        return foundAll;
+        return intSum;
     }
-
     
     /**
-     * Given a 2D array, reverse the order of the positions in the array
+     * Given a file, return the word that is alphabetically first
      * 
-     * @param arr specificed 2D array to be given
-     * @return array in inverted order
-     * @author J. Bian
+     * @param filenametxt String of file path name to determine word alpabetically first
+     * @return first word (alphabetical) in the array list at index 0
+     * @author B. Zhang
      */
-    public static int[][] invert(int[][] arr) {
-        int rowCount = arr.length;
-        int colCount = arr[0].length;
-        int reverseArr[][] = new int[rowCount][colCount];
+    public static String alphaWord(String filenametxt) throws IOException {
+        BufferedReader Br = new BufferedReader(new FileReader(filenametxt));
+        ArrayList <String> strList = new ArrayList <String> ();
+        String strLine = Br.readLine();
+        int intNumLines = 0;
+        String strTemp;
 
-        // Double for Loop going through every row and column
-        for (int i = 0; i < rowCount; i++) {
-            for (int j = 0; j < colCount; j++) {
+        // While loop to add all strings to an array list
+        while(strLine != null){
+            strList.add(strLine);
+            strLine = Br.readLine();
+            intNumLines ++;
+        }
+        Br.close();
 
-                /**
-                 * reverseArr's last position in the 2D array is changed to the value of i and
-                 * j, which start from the first value given respecitvely, and move across and
-                 * down the array
-                 */
-                reverseArr[rowCount - i - 1][colCount - j - 1] = arr[i][j];
+        // Bubble sorting alphabetically
+        for (int i = 0; i < intNumLines; i++) {
+            for (int j = i + 1; j < intNumLines; j++) {
+               
+                // Comparing string with other strings
+                if (strList.get(i).compareTo(strList.get(j)) > 0) {
+                    // Swaps
+                    strTemp = strList.get(i);
+                    strList.set(i, strList.get(j));
+                    strList.set(j, strTemp);
+                }
             }
         }
+        return strList.get(0);
+    }
 
-        return reverseArr;
+    /**
+     * Given an array and a value, return the array with larger numbers next to the values
+     * 
+     * @param nums Integer array given to determine number sequence
+     * @param val Integer given to select a specific element   
+     * @return nums (array of numbers) back to user
+     * @author B. Zhang
+     */
+    public static int[] notAlone(int[] nums, int val){
+        // For loop to loop through index numbers
+        for(int i = 0; i < nums.length - 1; i++){
+            if(nums[i] == val){
+                if(nums[i - 1] != nums[i] && nums[i + 1] != nums[i]){
+                    // Checks and compares adjacent numbers
+                    if(nums[i + 1] > nums[i - 1]){
+                        nums[i] = nums[i + 1];
+                    }
+                    else if(nums[i + 1] < nums[i - 1]){
+                        nums[i] = nums[i - 1];
+                    }
+                }
+            }
+        }
+        return nums;
+    }
+
+    /**
+     * Given an array, determine if the array is balanced (even)
+     * 
+     * @param nums Integer array given to determine balance
+     * @return true back to user if sum is even
+     * @return false back to user if sum is odd
+     * @author B. Zhang
+     */
+    public static boolean canBalance(int[] nums){
+        int intSum = 0;
+        // For loop to add all numbers in the array 
+        for(int i = 0; i < nums.length; i++){
+            intSum += nums[i];
+        }
+        
+        // Checks if the sum is odd or even
+        if(intSum % 2 == 0){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+
+    /**
+     * Given a 2d array, row, and column, return an array with all of the numbers up to the values given.
+     * 
+     * @param arr 2d array given to 
+     * @param row Number of rows given for arrays
+     * @param col Number of columns given for arrays
+     * @return the 2d array intNum 
+     * @author B. Zhang
+     */
+    public static int[][] split(int[][] arr, int row, int col){
+        int[][] intNum = new int[row + 1][col + 1];
+        // Nested for loop to assign the element from intNum with arr
+        for(int i = 0; i < row + 1; i++){
+            for(int j = 0; j < col + 1; j++){
+                intNum[i][j] = arr[i][j];
+            }
+        }
+        return intNum;
     }
 }
