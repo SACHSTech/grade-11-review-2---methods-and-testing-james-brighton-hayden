@@ -8,6 +8,7 @@ import gr11review.part2.Utility;
 
 public class Methods1Test {
 
+
     @Test
     void testSignature(){
         assertEquals("", Utility.zipZap(""));
@@ -36,5 +37,4 @@ public class Methods1Test {
     void test5(){
         assertEquals("xxzpxx", Utility.zipZap("xxzipxx"));
     }
-
 }

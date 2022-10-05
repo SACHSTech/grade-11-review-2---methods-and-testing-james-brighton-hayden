@@ -60,24 +60,24 @@ public class UtilityTest{
     // testing for single char
     @Test
     void alphaWordTest2() throws IOException{
-        assertEquals("x", Utility.alphaWord("C:\\Users\\brigh\\grade-11-review-2---methods-and-testing-james-brighton-hayden-1\\src\\gr11review\\test2\\Review2_3Test_2.txt"));
+        assertEquals("dojo", Utility.alphaWord("C:\\Users\\brigh\\grade-11-review-2---methods-and-testing-james-brighton-hayden-1\\src\\gr11review\\test2\\Review2_3Test_2.txt"));
     }
 
     // simple test
     @Test
     void alphaWordTest3() throws IOException{
-        assertEquals("accompanyx", Utility.alphaWord("C:\\Users\\brigh\\grade-11-review-2---methods-and-testing-james-brighton-hayden-1\\src\\gr11review\\test2\\Review2_3Test_3.txt"));
+        assertEquals("artificial", Utility.alphaWord("C:\\Users\\brigh\\grade-11-review-2---methods-and-testing-james-brighton-hayden-1\\src\\gr11review\\test2\\Review2_3Test_3.txt"));
     }
 
     // simple test
     @Test
     void alphaWordTest4() throws IOException{
-        assertEquals("accompany", Utility.alphaWord("C:\\Users\\brigh\\grade-11-review-2---methods-and-testing-james-brighton-hayden-1\\src\\gr11review\\test2\\Review2_3Test_4.txt"));
+        assertEquals("answer", Utility.alphaWord("C:\\Users\\brigh\\grade-11-review-2---methods-and-testing-james-brighton-hayden-1\\src\\gr11review\\test2\\Review2_3Test_4.txt"));
     }
 
     // simple test
     @Test
-    void notAlongTest1(){
+    void notAloneTest1(){
         int[] inArray = {1, 2, 3};
         int[] outArray = {1, 3, 3};
 
