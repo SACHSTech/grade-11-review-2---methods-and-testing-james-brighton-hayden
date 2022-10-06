@@ -39,17 +39,18 @@ public static boolean xyzMiddle(String str){
 public static String longestWord(String filenametxt) throws IOException{
     String longest_word = "";
     String current;
-    BufferedReader br = new BufferedReader(new FileReader(filenametxt));
- 
- 
-    while (sc.hasNext()) {
-       current = br.readLine();
-        if (current.length() > ((CharSequence) longest_word).length()) {
-          longest_word = current;
-        }
-       
+    try (BufferedReader br = new BufferedReader(new FileReader(filenametxt))) {
+      while (br.readLine() != null) {
+         current = br.readLine();
+          if (current.length() > ((CharSequence) longest_word).length()) {
+            longest_word = current;
+          }
+         
+      }
     }
-      System.out.println("\n"+longest_word+"\n");
+ 
+ 
+    System.out.println("\n"+longest_word+"\n");
          return longest_word;
  
    
