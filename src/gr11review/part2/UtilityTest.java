@@ -83,22 +83,22 @@ public class UtilityTest{
     // Testing with Review Text 1
     @Test
     void longestWordTest1() throws IOException{
-        assertEquals("conservation", Utility.longestWord("C:\\Users\\Hayden\\github-classroom\\SACHSTech\\grade-11-review-2---methods-and-testing-james-brighton-hayden\src\\gr11review\\test2\\Review2_3Test_1.txt"));
+        assertEquals("conservation", Utility.longestWord("C:\\Users\\eliza\\OneDrive\\Desktop\\github-classroom\\SACHSTech\\grade-11-review-2---methods-and-testing-james-brighton-hayden\src\\gr11review\\test2\\Review2_3Test_1.txt"));
     }
     // Testing with Review Text 2
     @Test
     void longestWordTest2() throws IOException{
-        assertEquals("x", Utility.longestWord("C:\\Users\\Hayden\\github-classroom\\SACHSTech\\grade-11-review-2---methods-and-testing-james-brighton-hayden\src\\gr11review\\test2\\Review2_3Test_2.txt"));
+        assertEquals("x", Utility.longestWord("C:\\Users\\eliza\\OneDrive\\Desktop\\github-classroom\\SACHSTech\\grade-11-review-2---methods-and-testing-james-brighton-hayden\src\\gr11review\\test2\\Review2_3Test_2.txt"));
     }
     // Testing with Review Text 3
     @Test
     void longestWordTest3() throws IOException{
-        assertEquals("preservation", Utility.longestWord("C:\\Users\\Hayden\\github-classroom\\SACHSTech\\grade-11-review-2---methods-and-testing-james-brighton-hayden\src\\gr11review\\test2\\Review2_3Test_3.txt"));
+        assertEquals("preservation", Utility.longestWord("C:\\Users\\eliza\\OneDrive\\Desktop\\github-classroom\\SACHSTech\\grade-11-review-2---methods-and-testing-james-brighton-hayden\src\\gr11review\\test2\\Review2_3Test_3.txt"));
     }
     // Testing with Review Text 4
     @Test
     void longestWordTest4() throws IOException{
-        assertEquals("conservation", Utility.longestWord("C:\\Users\\Hayden\\github-classroom\\SACHSTech\\grade-11-review-2---methods-and-testing-james-brighton-hayden\src\\gr11review\\test2\\Review2_3Test_4.txt"));
+        assertEquals("conservation", Utility.longestWord("C:\\Users\\eliza\\OneDrive\\Desktop\\github-classroom\\SACHSTech\\grade-11-review-2---methods-and-testing-james-brighton-hayden\src\\gr11review\\test2\\Review2_3Test_4.txt"));
     }
     // Testing Simple Cases
     @Test
