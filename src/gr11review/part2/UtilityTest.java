@@ -1,17 +1,17 @@
 package gr11review.part2;
-
+ 
 import static org.junit.jupiter.api.Assertions.*;
-
+ 
 import java.io.IOException;
-
+ 
 import org.junit.jupiter.api.Test;
-
+ 
 import gr11review.part2.Utility;
-
-
-
+ 
+ 
+ 
 public class UtilityTest{
-
+ 
     // 2D Array test cases
     int[][] invert1 = {
             { 1, 1, 1 },
@@ -50,13 +50,13 @@ public class UtilityTest{
         int[] answerzeros2 = new int[] { 0, 1, 1, 1 };
         int[] zeros3 = new int[] { 1, 1, 1, 1 };
         int[] answerzeros3 = new int[] { 1, 1, 1, 1 };
-
+ 
         //1D Array Cases Two Loops
         int[] series1 = new int[] { 1, 1, 2, 1, 2, 3 };
         int[] series2 = new int[] { 1, 1, 2, 1, 2, 3, 1, 2, 3, 4 };
         int[] series3 = new int[] { 1, 1, 2, 1, 2, 3, 1, 2, 3, 4, 1, 2, 3, 4, 5 };
         int[] series4 = new int[] { 1 };
-
+ 
     @Test
     // Testing just xyz
     void xyzTest1(){
@@ -75,35 +75,35 @@ public class UtilityTest{
     // Testing when yz comes before x
     @Test
     void xyzMiddleTest3(){
-        assertEquals(true, Utility.xyzMiddle("AyzxBB"));
+        assertEquals(false, Utility.xyzMiddle("AyzxBB"));
     }
     // Testing when there are only x's
     void xyzMiddleTest4(){
         assertEquals(false, Utility.xyzMiddle("xxxxxx"));
     }
-    // Testing when there are no xyz 
+    // Testing when there are no xyz
     void xyzMiddleTest5(){
         assertEquals(false, Utility.xyzMiddle("abcdefgh"));
     }
     // Testing with Review Text 1
     @Test
     void longestWordTest1() throws IOException{
-        assertEquals("conservation", Utility.longestWord("C:\\Users\\eliza\\OneDrive\\Desktop\\grade-11-review-2---methods-and-testing-james-brighton-hayden\\src\\gr11review\\test2\\Review2_3Test_1.txt"));
+        assertEquals("conservation", Utility.longestWord("C:\\Users\\Hayden\\github-classroom\\SACHSTech\\grade-11-review-2---methods-and-testing-james-brighton-hayden\src\\gr11review\\test2\\Review2_3Test_1.txt"));
     }
     // Testing with Review Text 2
     @Test
     void longestWordTest2() throws IOException{
-        assertEquals("x", Utility.longestWord("C:\\Users\\eliza\\OneDrive\\Desktop\\grade-11-review-2---methods-and-testing-james-brighton-hayden\\src\\gr11review\\test2\\Review2_3Test_2.txt"));
+        assertEquals("x", Utility.longestWord("C:\\Users\\Hayden\\github-classroom\\SACHSTech\\grade-11-review-2---methods-and-testing-james-brighton-hayden\src\\gr11review\\test2\\Review2_3Test_2.txt"));
     }
     // Testing with Review Text 3
     @Test
     void longestWordTest3() throws IOException{
-        assertEquals("preservation", Utility.longestWord("C:\\Users\\eliza\\OneDrive\\Desktop\\grade-11-review-2---methods-and-testing-james-brighton-hayden\\src\\gr11review\\test2\\Review2_3Test_3.txt"));
+        assertEquals("preservation", Utility.longestWord("C:\\Users\\Hayden\\github-classroom\\SACHSTech\\grade-11-review-2---methods-and-testing-james-brighton-hayden\src\\gr11review\\test2\\Review2_3Test_3.txt"));
     }
     // Testing with Review Text 4
     @Test
     void longestWordTest4() throws IOException{
-        assertEquals("conservation", Utility.longestWord("C:\\Users\\eliza\\OneDrive\\Desktop\\grade-11-review-2---methods-and-testing-james-brighton-hayden\\src\\gr11review\\test2\\Review2_3Test_4.txt"));
+        assertEquals("conservation", Utility.longestWord("C:\\Users\\Hayden\\github-classroom\\SACHSTech\\grade-11-review-2---methods-and-testing-james-brighton-hayden\src\\gr11review\\test2\\Review2_3Test_4.txt"));
     }
     // Testing Simple Cases
     @Test
@@ -122,23 +122,23 @@ public class UtilityTest{
     }
     // Testing input of 3
     @Test
-    void seriesUpTest1(){
-        assertEquals(series1, 3 );
+    void seriesUpTest1() throws IOException{
+        assertEquals(series1, 3);
     }
     // Testing input of 4
     @Test
-    void seriesUpTest2(){
-        assertEquals(series2, 4 );
+    void seriesUpTest2() throws IOException{
+        assertEquals(series2, 4);
     }
     // Testing input of 5
     @Test
-    void seriesUpTest3(){
-        assertEquals(series3, 5 );
+    void seriesUpTest3() throws IOException{
+        assertEquals(series3, 5);
     }
     // Testing input of 1
     @Test
-    void seriesUpTest4(){
-        assertEquals(series4, 1 );
+    void seriesUpTest4() throws IOException{
+        assertEquals(series4, 1);
     }
     @Test
     // Testing Simple Case
@@ -149,7 +149,7 @@ public class UtilityTest{
             assertArrayEquals(invertRes1[i], resultArr[i]);
         }
     }
-
+ 
     @Test
     // Testing Double Digits
     void invertTest2() {
@@ -159,7 +159,7 @@ public class UtilityTest{
             assertArrayEquals(invertRes2[i], resultArr[i]);
         }
     }
-
+ 
     @Test
     // Testing Duplicate Digits In The Same Row
     void invertTest3() {
