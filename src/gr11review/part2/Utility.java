@@ -6,6 +6,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.Reader;
 import java.util.Scanner;
+import java.ioFileNotFoundException;
  
 //3, 1, 3, 6, 9
 public class Utility {
@@ -49,10 +50,10 @@ public static String longestWord(String filenametxt) throws IOException{
           longestWord = current;
 
       }
-      return longestWord;
+      
 
   }
-    return current;
+  return longestWord;
 
 
 }
