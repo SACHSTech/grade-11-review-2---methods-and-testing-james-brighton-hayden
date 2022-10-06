@@ -5,6 +5,7 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.Reader;
+import java.util.Scanner;
  
 //3, 1, 3, 6, 9
 public class Utility {
@@ -37,23 +38,23 @@ public static boolean xyzMiddle(String str){
  
 }  
 public static String longestWord(String filenametxt) throws IOException{
-    String longest_word = "";
+    String longestWord = "";
     String current;
-    try (BufferedReader br = new BufferedReader(new FileReader(filenametxt))) {
-      while (br.readLine() != null) {
-         current = br.readLine();
-          if (current.length() > ((CharSequence) longest_word).length()) {
-            longest_word = current;
-          }
-         
+    Scanner scan = new Scanner(new File("C:\\Users\\Hayden\\github-classroom\\SACHSTech\\grade-11-review-2---methods-and-testing-james-brighton-hayden\src\\gr11review\\test2\\Review2_3Test_4.txt"));
+
+
+    while (scan.hasNext()) {
+      current = scan.next();
+      if (current.length() > longestWord.length()) {
+          longestWord = current;
+
       }
-    }
- 
- 
-    System.out.println("\n"+longest_word+"\n");
-         return longest_word;
- 
-   
+      return longestWord;
+
+  }
+    return current;
+
+
 }
 public static int[] zeroFront(int[] nums){
     int count = 0;
