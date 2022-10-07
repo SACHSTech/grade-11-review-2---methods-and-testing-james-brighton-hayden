@@ -50,7 +50,7 @@ public class UtilityTest{
         int[] series1 = new int[] { 1, 1, 2, 1, 2, 3 };
         int[] series2 = new int[] { 1, 1, 2, 1, 2, 3, 1, 2, 3, 4 };
         int[] series3 = new int[] { 1, 1, 2, 1, 2, 3, 1, 2, 3, 4, 1, 2, 3, 4, 5 };
-        int[] series4 = new int[] { 1 };
+        int[] series4 = new int[] {1};
  
     @Test
     // Testing just xyz
