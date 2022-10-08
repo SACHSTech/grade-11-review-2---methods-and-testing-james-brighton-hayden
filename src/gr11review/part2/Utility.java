@@ -7,7 +7,6 @@ import java.io.IOException;
 import java.io.Reader;
 import java.util.ArrayList;
 import java.util.Scanner;
-import java.ioFileNotFoundException;
  
 //3, 1, 3, 6, 9
 public class Utility {
@@ -75,11 +74,15 @@ public static int[] zeroFront(int[] nums){
 public static int[] seriesUp(int n){
     int[] result = new int[n * (n + 1) / 2];
     int i = 0;
-    for (int j = 1; j <= n; ++j)
-    for (int k = 1; k <= j; ++k)
+    for (int j = 1; j <= n; ++j){
+    for (int k = 1; k <= j; ++k){
     result[i++] = k;
+     
+    }
+  }
   return result;
-}
+  }
+
 public static int[][] invert(int[][] arr){
     for (int i = 0, n = arr.length; i < n; i++) {
         // select the elements only above the main diagonal
@@ -89,8 +92,6 @@ public static int[][] invert(int[][] arr){
             arr[j][i] = tmp;
         }
     }
-    return arr;
-   
+    return arr;   
 }
 }
- 
