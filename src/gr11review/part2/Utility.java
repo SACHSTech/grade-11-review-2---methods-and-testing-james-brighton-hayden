@@ -5,6 +5,7 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.Reader;
+import java.util.ArrayList;
 import java.util.Scanner;
 import java.ioFileNotFoundException;
  
@@ -20,7 +21,7 @@ public static boolean xyzMiddle(String str){
   if (word < 3)
  
     return false;
- 
+    // Does 
   if (word % 2 != 0){
  
     if (xyz.equals(str.substring(middle-1,middle+2))) {
@@ -41,16 +42,17 @@ public static boolean xyzMiddle(String str){
 public static String longestWord(String filenametxt) throws IOException{
     String longestWord = "";
     String current;
-    Scanner scan = new Scanner(new File("C:\\Users\\Hayden\\github-classroom\\SACHSTech\\grade-11-review-2---methods-and-testing-james-brighton-hayden\src\\gr11review\\test2\\Review2_3Test_4.txt"));
+    BufferedReader br = new BufferedReader(new FileReader(filenametxt));
+    ArrayList <String> word = new ArrayList <String> ();
+    String wordf = br.readLine();
 
-
-    while (scan.hasNext()) {
-      current = scan.next();
+    while (word != null) {
+      current = wordf;
       if (current.length() > longestWord.length()) {
           longestWord = current;
 
       }
-      
+      br.close();
 
   }
   return longestWord;
