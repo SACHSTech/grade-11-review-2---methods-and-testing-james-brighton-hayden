@@ -5,7 +5,6 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.Reader;
-import java.util.ArrayList;
 import java.util.Scanner;
  
 //3, 1, 3, 6, 9
@@ -20,9 +19,9 @@ public static boolean xyzMiddle(String str){
   if (word < 3)
  
     return false;
-    // Does 
-  if (word % 2 != 0){
  
+  if (word % 2 != 0){
+    //seeing if before and after xyz are equal 
     if (xyz.equals(str.substring(middle-1,middle+2))) {
       return true;
  
@@ -30,7 +29,7 @@ public static boolean xyzMiddle(String str){
         return false;
  
       }
- 
+      // seeing if before after xyz have a 1 difference
   } else if (xyz.equals(str.substring(middle-1,middle+2)) || xyz.equals(str.substring(middle-2,middle+1))) {
           return true;
  
@@ -39,27 +38,27 @@ public static boolean xyzMiddle(String str){
  
 }  
 public static String longestWord(String filenametxt) throws IOException{
+    // Setting variables
     String longestWord = "";
     String current;
-    BufferedReader br = new BufferedReader(new FileReader(filenametxt));
-    ArrayList <String> word = new ArrayList <String> ();
-    String wordf = br.readLine();
+    Scanner scan = new Scanner(new File("C:\\Users\\Hayden\\github-classroom\\SACHSTech\\grade-11-review-2---methods-and-testing-james-brighton-hayden\src\\gr11review\\test2\\Review2_3Test_4.txt"));
 
-    while (word != null) {
-      current = wordf;
+    // Scanning to compare text in the file
+    while (scan.hasNext()) {
+      current = scan.next();
       if (current.length() > longestWord.length()) {
           longestWord = current;
 
       }
-      br.close();
-
+    }
+    return longestWord;
   }
-  return longestWord;
-
 
 }
 public static int[] zeroFront(int[] nums){
+    // Setting Variables
     int count = 0;
+    // Setting the zeroes to the front and ones at the back
      for (int i = 0; i < nums.length; i++) {
      if (nums[i] == 0) {
       nums[i] = nums[count];
@@ -72,17 +71,15 @@ public static int[] zeroFront(int[] nums){
  
 }
 public static int[] seriesUp(int n){
+    // Setting Variables
     int[] result = new int[n * (n + 1) / 2];
     int i = 0;
-    for (int j = 1; j <= n; ++j){
-    for (int k = 1; k <= j; ++k){
+    // Counting up depnding on the input
+    for (int j = 1; j <= n; ++j)
+    for (int k = 1; k <= j; ++k)
     result[i++] = k;
-     
-    }
-  }
   return result;
-  }
-
+}
 public static int[][] invert(int[][] arr){
     for (int i = 0, n = arr.length; i < n; i++) {
         // select the elements only above the main diagonal
@@ -92,6 +89,7 @@ public static int[][] invert(int[][] arr){
             arr[j][i] = tmp;
         }
     }
-    return arr;   
+    return arr;
+   
 }
 }
