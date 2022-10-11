@@ -5,6 +5,7 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.Reader;
+import java.util.ArrayList;
 import java.util.Scanner;
  
 //3, 1, 3, 6, 9
@@ -19,7 +20,7 @@ public static boolean xyzMiddle(String str){
   if (word < 3)
  
     return false;
- 
+    // Does 
   if (word % 2 != 0){
  
     if (xyz.equals(str.substring(middle-1,middle+2))) {
@@ -40,18 +41,21 @@ public static boolean xyzMiddle(String str){
 public static String longestWord(String filenametxt) throws IOException{
     String longestWord = "";
     String current;
-    Scanner scan = new Scanner(new File("C:\\Users\\Hayden\\github-classroom\\SACHSTech\\grade-11-review-2---methods-and-testing-james-brighton-hayden\src\\gr11review\\test2\\Review2_3Test_4.txt"));
+    BufferedReader br = new BufferedReader(new FileReader(filenametxt));
+    ArrayList <String> word = new ArrayList <String> ();
+    String wordf = br.readLine();
 
-
-    while (scan.hasNext()) {
-      current = scan.next();
+    while (word != null) {
+      current = wordf;
       if (current.length() > longestWord.length()) {
           longestWord = current;
 
       }
-    }
-    return longestWord;
+      br.close();
+
   }
+  return longestWord;
+
 
 }
 public static int[] zeroFront(int[] nums){
@@ -70,11 +74,15 @@ public static int[] zeroFront(int[] nums){
 public static int[] seriesUp(int n){
     int[] result = new int[n * (n + 1) / 2];
     int i = 0;
-    for (int j = 1; j <= n; ++j)
-    for (int k = 1; k <= j; ++k)
+    for (int j = 1; j <= n; ++j){
+    for (int k = 1; k <= j; ++k){
     result[i++] = k;
+     
+    }
+  }
   return result;
-}
+  }
+
 public static int[][] invert(int[][] arr){
     for (int i = 0, n = arr.length; i < n; i++) {
         // select the elements only above the main diagonal
@@ -84,7 +92,6 @@ public static int[][] invert(int[][] arr){
             arr[j][i] = tmp;
         }
     }
-    return arr;
-   
+    return arr;   
 }
 }
