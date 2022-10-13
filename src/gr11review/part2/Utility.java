@@ -74,12 +74,17 @@ public static int[] seriesUp(int n){
     // Setting Variables
     int[] result = new int[n * (n + 1) / 2];
     int i = 0;
-    // Counting up depnding on the input
-    for (int j = 1; j <= n; ++j)
-    for (int k = 1; k <= j; ++k)
-    result[i++] = k;
-  return result;
+    
+    // Counting up depending on the input
+    for (int j = 1; j <= n; ++j){
+      for (int k = 1; k <= j; ++k){
+        result[i++] = k;
+      }
+    }
+
+    return result;
 }
+
 public static int[][] invert(int[][] arr){
     for (int i = 0, n = arr.length; i < n; i++) {
         // select the elements only above the main diagonal

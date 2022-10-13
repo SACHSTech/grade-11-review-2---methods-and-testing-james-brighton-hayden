@@ -118,22 +118,22 @@ public class UtilityTest{
     // Testing input of 3
     @Test
     void seriesUpTest1() throws IOException{
-        assertEquals(series1, 3);
+        assertEquals(3, series1);
     }
     // Testing input of 4
     @Test
     void seriesUpTest2() throws IOException{
-        assertEquals(series2, 4);
+        assertEquals(4, series2);
     }
     // Testing input of 5
     @Test
     void seriesUpTest3() throws IOException{
-        assertEquals(series3, 5);
+        assertEquals(5, series3);
     }
     // Testing input of 1
     @Test
     void seriesUpTest4() throws IOException{
-        assertEquals(series4, 1);
+        assertEquals(1, series4);
     }
     @Test
     // Testing Simple Case
