@@ -140,6 +140,7 @@ public class Utility {
                 intNum[i][j] = arr[i][j];
             }
         }
-        return intNum;
+ 
+        return reverseArr;
     }
 }
